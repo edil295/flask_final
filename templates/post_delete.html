@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mt-5 mb-5">
+    <h2>Удаление статьи</h2>
+    <form method="POST" action="{{ url_for('post_delete', post_id=post.id) }}">
+        {{ form.csrf_token }}
+        <p>Вы точно хотите удалить новость "{{ post.title }}"</p>
+        <button type="submit" class="btn btn-primary">Удалить</button>
+    </form>
+</div>
+{% endblock %}
